@@ -55,10 +55,10 @@ int main(int argc, char* argv[]) {
   TH1I *nLund = new TH1I("nLu","Lund jet multiplicity", 10, 0, 10);
   TH1I *nJade = new TH1I("nJA","Jade jet multiplicity", 10, 0, 10);
   TH1I *nDurham = new TH1I("nDu","Durham jet multiplicity", 10, 0, 10);
-  TH1F *PlLund = new TH1F("PlLund","Lund ",40,0,1);
-  TH1F *PlJade = new TH1F("PlJade","Plan",40,0,1);
-  TH1F *PlDurham = new TH1F("PlDurham","Plan",40,0,1);
-  TH1F *thLund = new TH1F("thLund","Angle",40,0,1.6);
+  TH1F *PlLund = new TH1F("PlLund","Plan Lund ",40,0,1);
+  TH1F *PlJade = new TH1F("PlJade","Plan Jade",40,0,1);
+  TH1F *PlDurham = new TH1F("PlDurham","Plan Durham",40,0,1);
+  TH1F *thLund = new TH1F("thLund","Lund Angle",40,0,1.6);
   TH1F *thJade = new TH1F("thJade","Jade Angle",40,0,1.6);
   TH1F *thDurham = new TH1F("thDurham","Durham Angle",40,0,1.6);
   double lundnorm;
@@ -74,7 +74,7 @@ int main(int argc, char* argv[]) {
   Vector P2;
   Vector n;
   // Begin event loop. Generate event. Skip if error. List first few.
-  for (int iEvent = 0; iEvent < 10000; ++iEvent) {
+  for (int iEvent = 0; iEvent < 100000; ++iEvent) {
     if (!pythia.next()) continue;
 
     // Find and histogram cluster jets: Lund, Jade and Durham distance.
